@@ -64,14 +64,11 @@ def main():
 
     match result:
         case "Negative":
-            with st.chat_message("ai", avatar="✨"):
-                st.markdown("The sentiment is Negative :rage:")
+            st.error('The sentiment is Negative', icon="😡")
         case "Positive":
-            with st.chat_message("ai", avatar="✨"):
-                st.markdown("The sentiment is Positive :blush:")
+            st.success('The sentiment is Positive', icon="😊")
         case _:
-            with st.chat_message("ai", avatar="✨"):
-                st.markdown("Enter some text above to find the sentiment :sparkles:")
+            st.info('Enter some text above to find the sentiment', icon="✨")
 
 
 if __name__ == "__main__":
