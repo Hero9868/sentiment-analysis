@@ -8,6 +8,10 @@ from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 from nltk.sentiment import SentimentIntensityAnalyzer
 
+
+nltk.download("vader_lexicon")
+nltk.download("punkt")
+
 pickle_in = open("sentiment_model.pkl", "rb")
 model = pickle.load(pickle_in)
 
