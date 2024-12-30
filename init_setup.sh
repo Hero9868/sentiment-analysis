@@ -4,7 +4,7 @@ echo [$(date)]: "START"
 echo [$(date)]: "creating env with python" 
 
 
-conda create --prefix ./env python -y
+conda create --prefix ./env python=3.8 -y
 
 # pixi init env
 # cd env
