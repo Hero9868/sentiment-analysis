@@ -1,0 +1,16 @@
+pandas
+scikit-learn
+numpy
+seaborn
+flask
+mlflow
+dvc
+
+
+pytest
+tox
+black
+flake8
+mypy
+
+-e .
