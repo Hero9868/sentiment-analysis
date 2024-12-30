@@ -36,12 +36,10 @@ def analyse_sentiment(transformed_text):
 
     sentiment_scores = sid.polarity_scores(transformed_text)
 
-    if sentiment_scores.get("compound", 0) >= 0.6:
+    if sentiment_scores.get("compound", 0) >= 0.5:
         sentiment = "Positive"
     elif sentiment_scores.get("compound", 0) <= 0.4:
         sentiment = "Negative"
-    else:
-        sentiment = "Neutral"
 
     print(sentiment)
     return sentiment
@@ -66,16 +64,13 @@ def main():
 
     match result:
         case "Negative":
-            with st.chat_message("user"):
+            with st.chat_message("ai", avatar="✨"):
                 st.markdown("The sentiment is Negative :rage:")
         case "Positive":
-            with st.chat_message("user"):
+            with st.chat_message("ai", avatar="✨"):
                 st.markdown("The sentiment is Positive :blush:")
-        case "Neutral":
-            with st.chat_message("user"):
-                st.markdown("The sentiment is Neutral :neutral_face:")
         case _:
-            with st.chat_message("user"):
+            with st.chat_message("ai", avatar="✨"):
                 st.markdown("Enter some text above to find the sentiment :sparkles:")
 
 
